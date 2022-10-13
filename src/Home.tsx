@@ -142,7 +142,7 @@ const Wallet = styled.ul`
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 7px !important;
   padding: 30px;
-  background-color: #4E44CE;
+  background-color: #FF10F0;
   margin: 0 auto;
   width: 100%;
   font-family: Montserrat, sans-serif !important;
@@ -169,7 +169,7 @@ const MintButtonContainer = styled.div`
     color: #fff;
   }
   .MuiButton-contained {
-    background-color: #4E44CE !important;
+    background-color: #FF10F0 !important;
     color: #fff !important;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 18px !important;
@@ -281,12 +281,12 @@ const BorderLinearProgress = styled(LinearProgress)`
   background-color: #262626 !important;
 
   > div.MuiLinearProgress-barColorPrimary{
-    background-color: #4E44CE !important;
+    background-color: #FF10F0 !important;
   }
 
   > div.MuiLinearProgress-bar1Determinate {
     border-radius: 30px !important;
-    background-color: #4E44CE;
+    background-color: #FF10F0;
   }
 `;
 
@@ -589,7 +589,7 @@ const Home = (props: HomeProps) => {
           <Image className="nft-image" src="yourimagehere.png" alt="Mint a YOURNFT" />
         </LeftContainer>
         <RightContainer className="rightcontainer">
-          <MainTitle className="maintitle">Your NFT Name</MainTitle>
+          <MainTitle className="maintitle">OG LABZ</MainTitle>
           <InfoContainer>
             <TotalItems className="totalitems">Total Items {itemsAvailable}</TotalItems>
             <Price className="price">Price ◎ {isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " ") : (price + " ")} </Price>
@@ -599,7 +599,7 @@ const Home = (props: HomeProps) => {
               <IconLink className="infoIcon" href="#" target="__blank"> <InfoIcon src="twitter.svg" /> </IconLink>
             </IconContainer>
           </InfoContainer>
-          <ProjectDescription>This front-end for Candy Machine V2 was made possible by Zaab Studio. Free to use & public to copy for everyone!</ProjectDescription>
+          <ProjectDescription>Full service NFT launchpad. </ProjectDescription>
           <MintButtonContainer>
             {!isActive && !isEnded && candyMachine ?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
               <Countdown
