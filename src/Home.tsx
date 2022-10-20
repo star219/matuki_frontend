@@ -589,7 +589,7 @@ const Home = (props: HomeProps) => {
           <Image className="nft-image" src="yourimagehere.png" alt="Mint a YOURNFT" />
         </LeftContainer>
         <RightContainer className="rightcontainer">
-          <MainTitle className="maintitle">OG LABZ</MainTitle>
+          <MainTitle className="maintitle">OG LABZ DAO</MainTitle>
           <InfoContainer>
             <TotalItems className="totalitems">Total Items {itemsAvailable}</TotalItems>
             <Price className="price">Price ◎ {isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " ") : (price + " ")} </Price>
@@ -599,7 +599,7 @@ const Home = (props: HomeProps) => {
               <IconLink className="infoIcon" href="https://twitter.com/og_labz" target="__blank"> <InfoIcon src="twitter.svg" /> </IconLink>
             </IconContainer>
           </InfoContainer>
-          <ProjectDescription>Full service NFT launchpad. </ProjectDescription>
+          <ProjectDescription>A decentralized collaborative investment group built around the values of street culture. </ProjectDescription>
           <MintButtonContainer>
             {!isActive && !isEnded && candyMachine ?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
               <Countdown
