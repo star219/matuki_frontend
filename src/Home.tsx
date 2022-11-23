@@ -401,7 +401,7 @@ const Home = (props: HomeProps) => {
               )[0],
             );
 
-          balance = tokenBalance ?.value ?.uiAmount || 0;
+          balance = tokenBalance?.value?.uiAmount || 0;
         } catch (e) {
           console.error(e);
           balance = 0;
@@ -413,7 +413,7 @@ const Home = (props: HomeProps) => {
       }
 
       // end the mint when date is reached
-      if (cndy ?.state.endSettings ?.endSettingType.date) {
+      if (cndy?.state.endSettings?.endSettingType.date) {
         setEndDate(toDate(cndy.state.endSettings.number));
         if (
           cndy.state.endSettings.number.toNumber() <
@@ -424,7 +424,7 @@ const Home = (props: HomeProps) => {
         }
       }
       // end the mint when amount is reached
-      if (cndy ?.state.endSettings ?.endSettingType.amount) {
+      if (cndy?.state.endSettings?.endSettingType.amount) {
         let limit = Math.min(
           cndy.state.endSettings.number.toNumber(),
           cndy.state.itemsAvailable,
