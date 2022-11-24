@@ -383,9 +383,9 @@ const Home = (props: HomeProps) => {
 
         if (cndy.state.whitelistMintSettings.discountPrice !== null && cndy.state.whitelistMintSettings.discountPrice !== cndy.state.price) {
           if (cndy.state.tokenMint) {
-            setWhitelistPrice(cndy.state.whitelistMintSettings.discountPrice ?.toNumber() / divider);
+            setWhitelistPrice(cndy.state.whitelistMintSettings.discountPrice?.toNumber() / divider);
           } else {
-            setWhitelistPrice(cndy.state.whitelistMintSettings.discountPrice ?.toNumber() / LAMPORTS_PER_SOL);
+            setWhitelistPrice(cndy.state.whitelistMintSettings.discountPrice?.toNumber() / LAMPORTS_PER_SOL);
           }
         }
 
@@ -401,7 +401,7 @@ const Home = (props: HomeProps) => {
               )[0],
             );
 
-          balance = tokenBalance ?.value ?.uiAmount || 0;
+          balance = tokenBalance?.value?.uiAmount || 0;
         } catch (e) {
           console.error(e);
           balance = 0;
@@ -413,7 +413,7 @@ const Home = (props: HomeProps) => {
       }
 
       // end the mint when date is reached
-      if (cndy ?.state.endSettings ?.endSettingType.date) {
+      if (cndy?.state.endSettings?.endSettingType.date) {
         setEndDate(toDate(cndy.state.endSettings.number));
         if (
           cndy.state.endSettings.number.toNumber() <
@@ -424,7 +424,7 @@ const Home = (props: HomeProps) => {
         }
       }
       // end the mint when amount is reached
-      if (cndy ?.state.endSettings ?.endSettingType.amount) {
+      if (cndy?.state.endSettings?.endSettingType.amount) {
         let limit = Math.min(
           cndy.state.endSettings.number.toNumber(),
           cndy.state.itemsAvailable,
@@ -500,7 +500,7 @@ const Home = (props: HomeProps) => {
   const onMint = async () => {
     try {
       setIsMinting(true);
-      if (wallet && candyMachine ?.program && wallet.publicKey) {
+      if (wallet && candyMachine?.program && wallet.publicKey) {
         const mint = anchor.web3.Keypair.generate();
         const mintTxId = (
           await mintOneToken(candyMachine, wallet.publicKey, mint)
@@ -517,7 +517,7 @@ const Home = (props: HomeProps) => {
           );
         }
 
-        if (!status ?.err) {
+        if (!status?.err) {
           setAlertState({
             open: true,
             message: 'Congratulations! Mint succeeded!',
@@ -606,9 +606,9 @@ const Home = (props: HomeProps) => {
           </InfoContainer>
           <ProjectDescription>Cross-chain project incubator services on Ethereum, Solana & Polygon.</ProjectDescription>
           <MintButtonContainer>
-            {!isActive && !isEnded && candyMachine ?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
+            {!isActive && !isEnded && candyMachine?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
               <Countdown
-                date={toDate(candyMachine ?.state.goLiveDate)}
+                date={toDate(candyMachine?.state.goLiveDate)}
                 onMount={({ completed }) => completed && setIsActive(!isEnded)}
                 onComplete={() => {
                   setIsActive(!isEnded);
@@ -618,7 +618,7 @@ const Home = (props: HomeProps) => {
                 !wallet ? (
                   <ConnectButton>Connect Wallet</ConnectButton>
                 ) : (!isWLOnly || whitelistTokenBalance > 0) ?
-                    candyMachine ?.state.gatekeeper &&
+                    candyMachine?.state.gatekeeper &&
                       wallet.publicKey &&
                       wallet.signTransaction ? (
                         <GatewayProvider
@@ -632,7 +632,7 @@ const Home = (props: HomeProps) => {
                           // // Replace with following when added
                           // gatekeeperNetwork={candyMachine.state.gatekeeper_network}
                           gatekeeperNetwork={
-                            candyMachine ?.state ?.gatekeeper ?.gatekeeperNetwork
+                            candyMachine?.state?.gatekeeper?.gatekeeperNetwork
                                                 } // This is the ignite (captcha) network
                           /// Don't need this for mainnet
                           clusterUrl={rpcUrl}
