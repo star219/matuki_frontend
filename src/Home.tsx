@@ -343,7 +343,7 @@ const Home = (props: HomeProps) => {
   const refreshCandyMachineState = () => {
     (async () => {
       if (!wallet) return;
-
+      
       const cndy = await getCandyMachineState(
         wallet as anchor.Wallet,
         props.candyMachineId,
@@ -567,9 +567,14 @@ const Home = (props: HomeProps) => {
 
   useEffect(() => {
     (async () => {
-      if (wallet) {
-        const balance = await props.connection.getBalance(wallet.publicKey);
-        setBalance(balance / LAMPORTS_PER_SOL);
+      try{
+        if (wallet) {
+          const balance = await props.connection.getBalance(wallet.publicKey);
+          setBalance(balance / LAMPORTS_PER_SOL);
+        }
+      }
+      catch(err){
+
       }
     })();
   }, [wallet, props.connection]);

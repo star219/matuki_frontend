@@ -18,7 +18,7 @@ import {
 } from './utils';
 
 export const CANDY_MACHINE_PROGRAM = new anchor.web3.PublicKey(
-  "5nUnJmnnPQFRZERsJnKyUPes7YHH64Q862PgpAbTrA2x"
+  "cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ"
 );
 
 const TOKEN_METADATA_PROGRAM_ID = new anchor.web3.PublicKey(
@@ -166,8 +166,11 @@ export const getCandyMachineState = async (
     preflightCommitment: 'recent',
   });
 
-  const idl = await anchor.Program.fetchIdl(CANDY_MACHINE_PROGRAM, provider);
+  console.log("candyMachineId = ", candyMachineId.toString());
+  console.log("provider=", provider);
 
+  const idl = await anchor.Program.fetchIdl(CANDY_MACHINE_PROGRAM, provider);
+  console.log("idl = ", idl);
   const program = new anchor.Program(idl, CANDY_MACHINE_PROGRAM, provider);
 
   const state: any = await program.account.candyMachine.fetch(candyMachineId);
