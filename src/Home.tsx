@@ -80,7 +80,7 @@ const TotalItems = styled.p`
   font-family: 'Poppins';
   font-weight: 400;
   margin: 0 10px 0 0;
-  border: 2px solid #fff;
+  border: 2px solid #ff0000;
   border-radius: 5px;
   padding: 3px 20px;
   text-transform: uppercase;
@@ -92,7 +92,7 @@ const Price = styled.p`
   font-size: 16px;
   font-family: 'Poppins' !important;
   margin: 0 10px 0 0;
-  border: 2px solid #fff;
+  border: 2px solid #ff0000;
   border-radius: 5px;
   padding: 3px 20px;
   text-transform: uppercase;
@@ -142,7 +142,7 @@ const Wallet = styled.ul`
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 7px !important;
   padding: 30px;
-  background-color: #FF10F0;
+  background-color: #FF0000;
   margin: 0 auto;
   width: 100%;
   font-family: Montserrat, sans-serif !important;
@@ -169,7 +169,7 @@ const MintButtonContainer = styled.div`
     color: #fff;
   }
   .MuiButton-contained {
-    background-color: #FF10F0 !important;
+    background-color: #FF0000 !important;
     color: #fff !important;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 18px !important;
@@ -281,12 +281,12 @@ const BorderLinearProgress = styled(LinearProgress)`
   background-color: #262626 !important;
 
   > div.MuiLinearProgress-barColorPrimary{
-    background-color: #FF10F0 !important;
+    background-color: #FF0000 !important;
   }
 
   > div.MuiLinearProgress-bar1Determinate {
     border-radius: 30px !important;
-    background-color: #FF10F0;
+    background-color: #FF0000;
   }
 `;
 
@@ -591,20 +591,20 @@ const Home = (props: HomeProps) => {
     <main>
       <MainContainer className="maincontainer">
         <LeftContainer className="leftcontainer">
-          <Image className="nft-image" src="yourimagehere.png" alt="Mint a YOURNFT" />
+          <Image className="nft-image" src="collection.png" alt="Mint a YOURNFT" />
         </LeftContainer>
         <RightContainer className="rightcontainer">
-          <MainTitle className="maintitle">MATUKI //</MainTitle>
+          <MainTitle className="maintitle">ShibZoids</MainTitle>
           <InfoContainer>
             <TotalItems className="totalitems">Total Items {itemsAvailable}</TotalItems>
             <Price className="price">Price ◎ {isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " ") : (price + " ")} </Price>
             <IconContainer>
-              <IconLink className="infoIcon" href="https://oglabz.io" target="__blank"> <InfoIcon src="website.svg" /> </IconLink>
-              <IconLink className="infoIcon" href="https://discord.gg/oglabz" target="__blank"> <InfoIcon src="discord.svg" /> </IconLink>
-              <IconLink className="infoIcon" href="https://twitter.com/og_labz" target="__blank"> <InfoIcon src="twitter.svg" /> </IconLink>
+              <IconLink className="infoIcon" href="https://shibzoids.com" target="__blank"> <InfoIcon src="website.svg" /> </IconLink>
+              <IconLink className="infoIcon" href="https://discord.gg/JGr9Z37Nan" target="__blank"> <InfoIcon src="discord.svg" /> </IconLink>
+              <IconLink className="infoIcon" href="https://twitter.com/shibzoids_nft" target="__blank"> <InfoIcon src="twitter.svg" /> </IconLink>
             </IconContainer>
           </InfoContainer>
-          <ProjectDescription>Cross-chain project incubator services on Ethereum, Solana & Polygon.</ProjectDescription>
+          <ProjectDescription>The SHIBZOIDS are a collection of 7,777 Shibu Inu Alien NFTs— unique digital collectibles living on the Solana Blockchain. ShibZoids travel from planet to planet through time and space, keeping the peace in the Metaverse. Holders will benefit through free Hotel and Resort accommodations across the globe. Future utility and perks will evolve as the ShibZoids community continues to grow.</ProjectDescription>
           <MintButtonContainer>
             {!isActive && !isEnded && candyMachine?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
               <Countdown
